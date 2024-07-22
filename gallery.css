@@ -22,8 +22,8 @@
 }
 
 .images{
-    width:45vw;
-    height:30vw;
+    width:42rem;
+    /* height:30vw; */
     border:0.2vw solid white;
     position:relative;
     overflow: hidden;
@@ -38,10 +38,25 @@
 
 .image img{
     display:none;
-    width: 45vw;
+    width: 42rem;
     /* height:30vw; */
     /* object-fit: cover; */
     object-fit:scale-down;
+}
+
+@media (max-width:600px) {
+    .images{
+        width:98%;
+        border:0.2vw solid white;
+        position:relative;
+        overflow: hidden;
+        margin:auto;
+    }
+    .image img{
+        display:none;
+        width: 100%;
+        object-fit:scale-down;
+    }
 }
 
 .photos,.videos{
@@ -86,9 +101,15 @@
 
 
 .videos video{
-    width:20vw;
-    height:20vw;
+    width:20rem;
+    height:20rem;
 
+}
+@media (max-width:600px) {
+    .videos video{
+        width:10rem;
+        height:10rem;
+    }
 }
 
 .clips{

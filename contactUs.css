@@ -45,4 +45,15 @@ iframe{
     width:40vw;
     display:flex;
     align-items: center;
+    margin:1vw 0;
+}
+@media (max-width:600px) {
+    .location-map span{
+        padding:2vw 10vw 2vw 2vw;
+        font-size:1.5vw;
+        width:90vw;
+        display:flex;
+        align-items: center;
+        margin:1vw 0;
+    }
 }
