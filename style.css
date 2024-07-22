@@ -82,7 +82,7 @@ section{
     z-index:2;
     position:absolute;
     top:-100%;
-    /* left:28%; */
+    left:1%;
     height:28vw;
     width:98vw;
     margin:auto;
@@ -93,7 +93,7 @@ section{
     justify-content: center;
     align-items: center;
     /* border-radius:50%; */
-    font-size: 3rem;
+    font-size: 4rem;
     font-family:"Baskervville SC", serif;
     font-weight:bold;
 }
@@ -102,9 +102,9 @@ section{
         z-index:2;
         position:absolute;
         top:-100%;
-        left:28%;
+        left:22%;
         height:28vw;
-        width:42vw;
+        width:58vw;
         margin:auto;
         transition:top 0.5s;
     
@@ -113,7 +113,7 @@ section{
         justify-content: center;
         align-items: center;
         /* border-radius:50%; */
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         font-family:"Baskervville SC", serif;
         font-weight:bold;
     }
