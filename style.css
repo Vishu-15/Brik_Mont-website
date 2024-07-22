@@ -136,8 +136,8 @@ section{
 }
 
 .items{
-    height:15vw;
-    width:15vw;
+    height:15rem;
+    width:15rem;
     padding:1vw;
     margin-bottom:2vw;
     background-color: white;
@@ -153,7 +153,7 @@ section{
 }
 
 .items img{
-    height:10vw;
+    height:10rem;
 }
 
 .items span{
@@ -202,10 +202,18 @@ section{
 }
 
 .logos img{
-    height:10vw;
+    height:10rem;
     margin:0rem 1vw;
     object-fit: scale-down;
 }
+@media (max-width:600px) {
+    .logos img{
+        height:5rem;
+        margin:0rem 1vw;
+        object-fit: scale-down;
+    }
+}
+
 
 
 /* footer */
@@ -297,4 +305,26 @@ footer{
 
 .phone,.mail{
     margin-top:0.5vw;
+}
+
+
+.smsize{
+    font-size:0.8rem !important;
+}
+.midsize{
+    font-size:1.3rem !important;
+}
+.largesize{
+    font-size:1.8rem !important;
+}
+@media (max-width:600px) {
+    .smsize{
+        font-size:0.5rem !important;
+    }
+    .midsize{
+        font-size:1rem !important;
+    }
+    .largesize{
+        font-size:1.5rem !important;
+    }
 }

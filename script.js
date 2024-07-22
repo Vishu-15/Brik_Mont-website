@@ -21,9 +21,21 @@ if(window.innerWidth<600){
 
 setTimeout(()=>{
     if(document.querySelector(".jumbotron-logo")){
-        document.querySelector(".jumbotron-logo").style.top="35%";}
+        if(window.innerWidth<600){
+            document.querySelector(".jumbotron-logo").style.top="28%";
+        }
+        else{
+            document.querySelector(".jumbotron-logo").style.top="35%";
+        }
+    }
+    
     else{
-        document.querySelector(".jumbo-logo").style.top="20%";
+        if(window.innerWidth<600){
+            document.querySelector(".jumbo-logo").style.top="25%";
+        }
+        else{
+            document.querySelector(".jumbo-logo").style.top="30%";
+        }
     }
 },1);
 
