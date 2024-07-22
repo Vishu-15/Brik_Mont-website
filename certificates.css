@@ -1,5 +1,5 @@
   section{
-    padding-bottom: 0 !important;
+    padding-bottom: 4rem !important;
   }
   .secbox{
     background:transparent !important;
@@ -13,7 +13,7 @@
     text-decoration-color: red;
   }
   .files{
-    margin-top:4vw;
+    margin:2rem 0;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

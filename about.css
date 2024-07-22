@@ -19,7 +19,7 @@
 }
 .founder-image{
     position:relative;
-    margin-bottom: 1vw;
+    margin-bottom: 1rem;
 }
 /* .founder-image .name{
     position: absolute;
@@ -56,7 +56,7 @@
 }
 
 .leaders,.foundermsg{
-    padding-bottom:4vw;
+    padding-bottom:2rem;
 }
 
 .leaders-images{
@@ -73,7 +73,7 @@
     justify-content: space-evenly;
     background:radial-gradient(#CADCFC,#8AAAE5) ;
     width:90%;
-    margin:1vw;
+    margin:1rem 1vw;
 }
 .leader-image:nth-child(even){
     display:flex;
@@ -81,7 +81,7 @@
     justify-content: space-evenly;
     background:radial-gradient(#CADCFC,#8AAAE5) ;
     width:90%;
-    margin:1vw;
+    margin:1rem 1vw;
 }
 
 .leader-image img{

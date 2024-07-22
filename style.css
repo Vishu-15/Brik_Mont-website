@@ -135,10 +135,10 @@ section{
 .secbox{
     /* background-image:conical-gradient(to bottom,rgb(215, 212, 212),rgb(27, 24, 24)); */
     background-color:#8AAAE5;
-    margin:2vw auto;
+    margin:1.5rem auto;
     width:90%;
     /* height:30vh; */
-    padding: 2vw;
+    padding: 1rem 2vw 2rem 2vw;
     text-align: center;
 }
 
@@ -154,7 +154,7 @@ section{
     font-size:2rem;
     background: linear-gradient(rgba(255, 0, 0, 0.16),rgba(255, 0, 0, 0.705));
     border-radius: 5%;
-    margin-bottom:2vw;
+    margin-bottom:1rem;
     text-align: center;
 }
 
