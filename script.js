@@ -1,14 +1,14 @@
 // console.log(window.innerWidth);
-let jumbo=document.querySelector(".jumbotron");
-let video=document.querySelector(".jumbotron video");
-if(video && window.innerWidth<600){
-    jumbo.removeChild(video);
-    let image=document.createElement('img');
-    image.setAttribute('src','./images/about_bg.png');
-    image.className="img-fluid";
-    image.style.height='50vh';
-    jumbo.insertBefore(image,jumbo.firstChild);
-}
+// let jumbo=document.querySelector(".jumbotron");
+// let video=document.querySelector(".jumbotron video");
+// if(video && window.innerWidth<600){
+//     jumbo.removeChild(video);
+//     let image=document.createElement('img');
+//     image.setAttribute('src','./images/about_bg.png');
+//     image.className="img-fluid";
+//     image.style.height='50vh';
+//     jumbo.insertBefore(image,jumbo.firstChild);
+// }
 
 if(window.innerWidth<600){
     if(document.querySelector(".jumbotron .img-fluid")){

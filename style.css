@@ -72,7 +72,7 @@ section{
    z-index:1;
    position :relative;
    background-color: black;
-   opacity:95%;
+   /* opacity:98%; */
 }
 .jumbo .img-fluid{
     height:60vh;
@@ -82,9 +82,9 @@ section{
     z-index:2;
     position:absolute;
     top:-100%;
-    left:28%;
+    /* left:28%; */
     height:28vw;
-    width:42vw;
+    width:98vw;
     margin:auto;
     transition:top 0.5s;
 
@@ -123,6 +123,7 @@ section{
     color:yellow;
     text-shadow: -0.1vw -0.1vw 0 red, 0.1vw -0.1vw 0 red, 0.1vw 0.1vw 0 red,
     0.1vw 0.1vw 0 red;
+    text-align: center;
 }
 
 /* .logo2-text{
