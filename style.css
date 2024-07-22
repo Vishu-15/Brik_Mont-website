@@ -92,9 +92,30 @@ section{
     justify-content: center;
     align-items: center;
     /* border-radius:50%; */
-    font-size: 4vw;
+    font-size: 3rem;
     font-family:"Baskervville SC", serif;
     font-weight:bold;
+}
+@media (max-width:600px){
+    .jumbo-logo,.jumbotron-logo{
+        z-index:2;
+        position:absolute;
+        top:-100%;
+        left:28%;
+        height:28vw;
+        width:42vw;
+        margin:auto;
+        transition:top 0.5s;
+    
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border-radius:50%; */
+        font-size: 1.3rem;
+        font-family:"Baskervville SC", serif;
+        font-weight:bold;
+    }
 }
 
 .jumbo-logo p,.jumbotron-logo p{
