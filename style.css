@@ -72,6 +72,7 @@ section{
    z-index:1;
    position :relative;
    background-color: black;
+   opacity:95%;
 }
 .jumbo .img-fluid{
     height:60vh;
