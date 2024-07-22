@@ -269,7 +269,12 @@ footer{
 }
 
 .foot-logo img{
-    width:22vw;
+    width:18rem;
+}
+@media (max-width:600px){
+    .foot-logo img{
+        width:10rem;
+    }
 }
 
 .handles{
