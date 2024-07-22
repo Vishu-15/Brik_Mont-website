@@ -1,0 +1,119 @@
+.cables{
+    margin:4vw;
+    padding:2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.category img{
+    width:15rem;
+    height:10rem;
+    object-fit: scale-down;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    margin:2vw 0vw;
+    padding:2vw;
+    overflow:hidden;
+    position: relative;
+}
+.category .cable-name{
+    /* color:white; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:1vw;
+}
+.detail-btn{
+    color:white;
+    /* display:none; */
+    padding:0.5vw;
+    margin:1vw;
+    font-size:0.8rem;
+    background-color: red;
+    position:absolute;
+    bottom:-50%;
+    left:32%;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+.category:hover>.detail-btn{
+    bottom:-1%;
+}
+.detail-btn:hover{
+    background-color: white;
+    border:0.2vw solid red;
+    color:red;
+}
+
+
+.description{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    text-align: center;
+    margin:2vw;
+}
+.category-diagram{
+    margin:1vw 2vw;
+    padding:1vw;
+    background-color: white;
+}
+.category-diagram img{
+    width:20rem;
+    height:15rem;
+    object-fit: scale-down;
+}
+.description p{
+    width:50%;
+    color:black;
+    margin:2vw 1vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem !important;
+}
+
+@media (max-width:1200px) {
+    .description p{
+        width:100%;
+    }
+    .category-diagram img{
+        width:15rem;
+        height:10rem;
+        object-fit: scale-down;
+    }
+}
+
+.secbox-heading{
+    font-size: 1.8rem !important;
+}
+
+.detail-table{
+    display:none;
+}
+table th{
+    font-size:1.2rem !important;
+    padding: 2vw 0 !important;
+}
+table td {
+    text-align: left !important;
+}
+table td li,table td p{
+    padding:1vw;
+    font-size:1rem !important;
+    margin:auto 0 !important;
+}
+table td li::marker{
+    color: red;
+}
+
+.active{
+    display:block;
+}
+.inactive{
+    display:none;
+}

@@ -1,0 +1,300 @@
+/* navbar */
+.navbar{
+    /* background-image:linear-gradient(rgb(50, 50, 50),rgb(108, 104, 104)) !important; */
+    background-color: #CADCFC !important;
+    /* background-color: #8AAAE5 !important; */
+    border-bottom:2px solid black !important;
+    transition:all ease 1s;
+}
+
+/* onscroll */
+.nav-onscroll-bg{
+    background-color:#00246B !important;
+    border-bottom:2px solid white !important;
+}
+
+.navbar-toggler{
+    background-color:white !important;
+    border:2px solid black;
+}
+
+.navbar-brand img{
+    /* border-radius:60%; */
+    /* height:2rem; */
+    width:8rem;
+    margin:2vw;
+    margin-right:0;
+}
+
+.collapse{
+    margin-left: 25vw !important;
+} 
+
+.nav-link{
+    margin:0vw 1vw !important;
+    color:black !important;
+    border-radius:5px;
+
+}
+
+/* onscroll */
+.nav-onscroll-txt{
+    color:white !important;
+}
+
+.nav-link:hover{
+    background-color:red !important;
+    color:white !important;
+}
+
+.dropdown-item:hover{
+    background-color: red !important;
+    color:white !important;
+}
+
+
+/* section */
+section{
+    background-color: #CADCFC;
+    /* background-image:linear-gradient(to bottom right,rgb(168, 167, 167),rgb(27, 24, 24)); */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom:5vw;
+}
+
+/* jumbotron */
+.jumbotron .img-fluid,.jumbo .img-fluid{
+    height:100vh;
+    width:100vw;
+    filter: blur(10px); 
+   -webkit-filter: blur(10px); 
+   z-index:1;
+   position :relative;
+   background-color: black;
+}
+.jumbo .img-fluid{
+    height:60vh;
+}
+
+.jumbo-logo,.jumbotron-logo{
+    z-index:2;
+    position:absolute;
+    top:-100%;
+    left:28%;
+    height:28vw;
+    width:42vw;
+    margin:auto;
+    transition:top 0.5s;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-radius:50%; */
+    font-size: 4vw;
+    font-family:"Baskervville SC", serif;
+    font-weight:bold;
+}
+
+.jumbo-logo p,.jumbotron-logo p{
+    color:yellow;
+    text-shadow: -0.1vw -0.1vw 0 red, 0.1vw -0.1vw 0 red, 0.1vw 0.1vw 0 red,
+    0.1vw 0.1vw 0 red;
+}
+
+/* .logo2-text{
+        border: 3px solid #f1f1f1; 
+        background-color:rgba(0, 0, 0, 0.4); 
+    } */
+
+/* products */
+.secbox{
+    /* background-image:conical-gradient(to bottom,rgb(215, 212, 212),rgb(27, 24, 24)); */
+    background-color:#8AAAE5;
+    margin:2vw auto;
+    width:90%;
+    /* height:30vh; */
+    padding: 2vw;
+    text-align: center;
+}
+
+.products{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.secbox-heading{
+    color:white;
+    font-size:2.2vw;
+    background: linear-gradient(rgba(255, 0, 0, 0.16),rgba(255, 0, 0, 0.705));
+    border-radius: 5%;
+    margin-bottom:2vw;
+    text-align: center;
+}
+
+.items{
+    height:15vw;
+    width:15vw;
+    padding:1vw;
+    margin-bottom:2vw;
+    background-color: white;
+    box-shadow:1vw 1vw rgba(21, 21, 21, 0.463);
+    transform:translateX(-600%);
+    transition:transform 0.5s;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    /* align-items: center; */
+}
+
+.items img{
+    height:10vw;
+}
+
+.items span{
+    font-size:1.5vw;
+    padding-top: 1rem;
+    color:black;
+}
+
+.items:hover{
+    box-shadow:0.5vw 0.5vw rgba(247, 4, 4, 0.783);
+}
+
+
+/* vision & mission */
+.secbox-txt{
+    color:black;
+    font-size:1.5vw;
+    padding:0 2vw;
+}
+
+
+/* clients */
+.clients{
+    color:white;
+    display:flex;
+    flex-direction: column;
+}
+
+@keyframes slide{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+.logos{
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.logos-slide{
+    display:inline-block;
+    animation:25s slide infinite linear;
+}
+
+.logos img{
+    height:10vw;
+    margin:0rem 1vw;
+    object-fit: scale-down;
+}
+
+
+/* footer */
+footer{
+    padding:3vw;
+    background-color: rgb(3, 20, 101);
+    color:white;
+    display:flex;
+    flex-direction: column;
+}
+
+.footer-box{
+    margin:2vw;
+    width:20rem;
+    text-align: left;
+}
+
+.company-details{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.essentials{
+    margin-right:5vw;
+}
+
+.fa-solid{
+    font-size:1vw;
+}
+
+.foot-logo img{
+    width:22vw;
+}
+
+.handles{
+    margin-top:4vw;
+    display:flex;
+}
+.handles i{
+    font-size:1.5vw;
+    margin:1vw;
+}
+
+.links{
+    text-align:left;
+}
+
+.links>span,.contacts>span{
+    font-size: 2vw;;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+.links a{
+    text-decoration: none;
+    display:block;
+    color:white;
+    font-size:1vw;
+    margin:1vw;
+}
+.links a:hover{
+    color:red;
+}
+
+
+.contact-details{
+    text-align: left;
+}
+
+.add{
+    display:flex;
+    margin-top:1vw;
+}
+.add .fa-solid{
+    color:red;
+}
+.add a{
+    text-decoration: none;
+    color:white;
+}
+.add a:hover{
+    color:rgb(150, 150, 220);
+}
+.smtxt{
+    font-size:1vw;
+    margin-left:0.5vw;
+    display:inline-block;
+}
+
+.phone,.mail{
+    margin-top:0.5vw;
+}

@@ -1,0 +1,98 @@
+/* .gallery{
+    margin:auto;
+} */
+
+/* section{
+    background:rgb(213, 210, 210) !important;
+    background-attachment: fixed; 
+    mix-blend-mode: lighten;
+    margin:6vw auto !important;
+} */
+
+.secbox{
+    background:transparent !important;
+    margin:5vw auto !important;
+}
+
+.secbox-heading{
+    background: transparent !important;
+    color:black !important;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.images{
+    width:45vw;
+    height:30vw;
+    border:0.2vw solid white;
+    position:relative;
+    overflow: hidden;
+    margin:auto;
+}
+
+.images-slider{
+    display:flex;
+    transform:translateX(0);
+    transition:all 0.5s ease 0s;
+}
+
+.image img{
+    display:none;
+    width: 45vw;
+    /* height:30vw; */
+    /* object-fit: cover; */
+    object-fit:scale-down;
+}
+
+.photos,.videos{
+    padding:5vw;
+    margin:2vw auto;
+}
+
+.active img{
+    display:block;
+}
+
+.prev,.next{
+    color:black;
+    background-color:rgba(255, 255, 255, 0.76);
+    display:inline-block;
+    padding:0vw 1vw;
+    font-size: 2vw;
+    font-weight: bolder;
+    cursor:pointer;
+    user-select: none;
+}
+
+
+.prev{
+    position:absolute;
+    top:50%;
+    left:0;
+}
+.next{
+    position:absolute;
+    top:50%;
+    right:0;
+}
+
+.zoom p{
+    font-size: 1.5vw;
+    color:white;
+    position:absolute;
+    bottom:0%;
+    left:22%;
+}
+
+
+.videos video{
+    width:20vw;
+    height:20vw;
+
+}
+
+.clips{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

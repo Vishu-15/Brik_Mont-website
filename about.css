@@ -1,0 +1,118 @@
+.founder-inbox{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.founder-image img{
+    width:22vw;
+    margin:2vw;
+    /* border-radius: 10%;s */
+}
+.founder-image{
+    position:relative;
+    padding-bottom: 1vw;
+}
+.founder-image .name{
+    position: absolute;
+    left: 7.85%;
+    bottom: 0;
+    font-size: 1.5vw;
+    background-color: white;
+    color: black;
+    width: 21.95vw;
+    padding: 0.4vw;
+    font-weight: 500;
+    /* margin: 0 auto */
+}
+
+.foundermsg{
+    background-image:url('./images/founders_msg_bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.foundermsg span{
+    color:yellow;
+    font-size:1.5vw;
+    margin:auto auto;
+    width:50vw;
+}
+
+.leaders,.foundermsg{
+    padding-bottom:4vw;
+}
+
+.leaders-images{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.leader-image{
+    display:flex;
+    justify-content: space-evenly;
+    background:radial-gradient(#CADCFC,#8AAAE5) ;
+    width:90%;
+    margin:1vw;
+}
+
+.leader-image img{
+    width:20vw;
+    margin:2vw;
+}
+
+.leader-name{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin:1vw 8vw;
+    font-size: 2vw;
+    color:black;
+    font-weight: bold;
+}
+
+/* .bod{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:2vw;
+}
+
+.bod .direc{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:20vw;
+}
+
+.bod .direc img{
+    width:20vw;
+    border-radius: 10%;
+    margin:2vw;
+} */
+
+.logos-about img{
+    width:8vw;
+    margin:2vw;
+    border-radius: 10%;
+}
+
+.choose-us-txt{
+    background-color: #CADCFC;
+    margin:2vw;
+    padding:2vw;
+    text-align: left;
+    font-size: 1.5vw;
+    transform: translateX(-500%);
+    transition: all ease 0.5s;
+}
+
+.slideIn{
+    transform:translateX(0%);
+}

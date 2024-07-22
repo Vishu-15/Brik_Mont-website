@@ -1,0 +1,72 @@
+  section{
+    padding-bottom: 0 !important;
+  }
+  .secbox{
+    background:transparent !important;
+    margin-top:6vw !important;
+  }
+
+  .secbox-heading{
+    background: transparent !important;
+    color:black !important;
+    text-decoration: underline;
+    text-decoration-color: red;
+  }
+  .files{
+    margin-top:4vw;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .file{
+    background-color: rgba(0,0,0,0.06);
+    /* background:radial-gradient(#CADCFC,#CADCFC,#8AAAE5) ; */
+    width:28%;
+    /* height:15rem; */
+    padding:2vw;
+    margin:1vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+  }
+
+  .file a {
+    text-decoration: none;
+  }
+
+  .file a img{
+    width:4rem;
+  }
+
+  @media (max-width:800px){
+    .file a img{
+       width:2rem;
+    }
+  }
+
+  .file p{
+    font-size: 1.3vw;
+    text-align: center;
+    /* padding: 0.5vw; */
+    margin: 1.5vw;
+    color:black;
+  }
+
+  .certified-by{
+    background-color:#8AAAE5 ;
+    padding:1vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .certified-by span{
+    font-size: 1.5vw;
+    color:white;
+  }
+  .certified-by img{
+    width:20vw;
+    margin:1vw;
+  }
