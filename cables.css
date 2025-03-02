@@ -20,6 +20,7 @@
     padding:2vw;
     overflow:hidden;
     position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .category .cable-name{
     /* color:white; */
@@ -47,6 +48,17 @@
     background-color: white;
     border:0.2vw solid red;
     color:red;
+}
+
+/* ✅ Smooth Transition for Images */
+.category img, .category-diagram img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🟢 Hover Effect - Slight Zoom */
+.category:hover, .category img:hover, .category-diagram img:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -90,6 +102,15 @@
 
 .secbox-heading{
     font-size: 1.8rem !important;
+}
+
+.show-more-details{
+    display: inline-block;
+    color:white;
+    background-color: red;
+    padding:0 1rem;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .detail-table{

@@ -1,88 +1,156 @@
-  section{
-    padding-bottom: 4rem !important;
+/* ✅ General Section Styling */
+section {
+  padding-bottom: 4rem !important;
+}
+
+.secbox {
+  background: transparent !important;
+  margin-top: 6vw !important;
+  text-align: center;
+}
+
+/* ✅ Section Heading */
+.secbox-heading {
+  background: transparent !important;
+  color: black !important;
+  text-decoration: underline;
+  text-decoration-color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* ✅ Certificate Grid */
+.files {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ✅ Certificate Card */
+.file {
+  background-color: rgba(0, 0, 0, 0.06);
+  width: 28%;
+  padding: 2vw;
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🟢 Hover Effect - Lift the Card */
+.file:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Certificate Link */
+.file a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ✅ PDF Icon */
+.file a img {
+  width: 4rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🟢 Hover Effect - Zoom Icon */
+.file:hover a img {
+  transform: scale(1.1);
+}
+
+/* ✅ Certificate Text */
+.file p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: black;
+}
+
+/* 🟢 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .file {
+      width: 40%;
   }
-  .secbox{
-    background:transparent !important;
-    margin-top:6vw !important;
+}
+
+@media (max-width: 768px) {
+  .secbox-heading {
+      font-size: 1.5rem;
+  }
+  
+  .file {
+      width: 46%;
+      padding: 1.5rem;
+  }
+  
+  .file a img {
+      width: 3.5rem;
   }
 
-  .secbox-heading{
-    background: transparent !important;
-    color:black !important;
-    text-decoration: underline;
-    text-decoration-color: red;
+  .file p {
+      font-size: 1rem;
   }
-  .files{
-    margin:2rem 0;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  .file{
-    background-color: rgba(0,0,0,0.06);
-    width:28%;
-    padding:2vw;
-    margin:1vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-  }
-  @media (max-width:600px) {
-    .file{
-      background-color: rgba(0,0,0,0.06);
-      width:46%;
-      padding:2vw;
-      margin:1vw;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      /* justify-content: center; */
-    }
+}
+
+@media (max-width: 480px) {
+  .file {
+      width: 90%;
+      padding: 1rem;
   }
 
-  .file a {
-    text-decoration: none;
+  .file a img {
+      width: 3rem;
   }
 
-  .file a img{
-    width:4rem;
+  .file p {
+      font-size: 0.9rem;
+  }
+}
+
+/* ✅ Certified By Section */
+.certified-by {
+  background-color: #8AAAE5;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* ✅ Certified By Text */
+.certified-by span {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ✅ Certified By Logo */
+.certified-by img {
+  width: 16rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🟢 Hover Effect - Logo */
+.certified-by img:hover {
+  transform: scale(1.1);
+}
+
+/* 🟢 Responsive Adjustments */
+@media (max-width: 600px) {
+  .certified-by img {
+      width: 11rem;
   }
 
-  @media (max-width:800px){
-    .file a img{
-       width:3rem;
-    }
+  .certified-by span {
+      font-size: 1.2rem;
   }
-
-  .file p{
-    font-size: 1.3vw;
-    text-align: center;
-    /* padding: 0.5vw; */
-    margin: 1.5vw;
-    color:black;
-  }
-
-  .certified-by{
-    background-color:#8AAAE5 ;
-    padding:1vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .certified-by span{
-    font-size: 1.5vw;
-    color:white;
-  }
-  .certified-by img{
-    width:16rem;
-    margin:1vw;
-  }
-  @media (max-width:600px) {   
-    .certified-by img{
-      width:11rem;
-      margin:1vw;
-    }
-  }
+}

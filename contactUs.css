@@ -1,59 +1,128 @@
-.locations{
-    margin:auto;
+/* ✅ General Locations Section */
+.locations {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
-.location{
-    width:90vw;
-    margin:6vw 2vw;
-    padding:2vw;
-    /* background:rgb(213, 210, 210); */
-    background-color: #8AAAE5;
+/* ✅ Individual Location Box */
+.location {
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(135deg, #8AAAE5, #5D89C2);
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-.location-heading{
+/* 🟢 Hover Effect */
+.location:hover {
+    transform: scale(1.02);
+}
+
+/* ✅ Location Heading */
+.location-heading {
     text-decoration: underline;
     text-decoration-color: red;
-    padding:0 2vw;
-    font-size: 2vw;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
 }
 
-.location-map{
+/* ✅ Location Map Wrapper */
+.location-map {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
 }
 
-iframe{
-    width:25rem;
-    height:15rem;
+/* ✅ Address Text */
+.location-map span {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    max-width: 50%;
 }
 
-@media (min-width:0px) and (max-width:800px){
-    iframe{
-        width:15rem;
-        height:10rem;
+/* ✅ Google Map Container */
+.map {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Google Map Embed */
+iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+    .location-heading {
+        font-size: 1.8rem;
+    }
+    
+    .location-map {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .location-map span {
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .map {
+        width: 100%;
     }
 }
 
-.map{
-    border:0.2vw solid rgba(0, 0, 0, 0.21);
+@media (max-width: 768px) {
+    .locations {
+        width: 95%;
+    }
+
+    .location {
+        padding: 1.5rem;
+    }
+
+    .location-heading {
+        font-size: 1.5rem;
+    }
+
+    .location-map span {
+        font-size: 1rem;
+    }
+
+    iframe {
+        height: 180px;
+    }
 }
 
-.location-map span{
-    padding:2vw 10vw 2vw 2vw;
-    font-size:1.5vw;
-    width:40vw;
-    display:flex;
-    align-items: center;
-    margin:1vw 0;
-}
-@media (max-width:600px) {
-    .location-map span{
-        padding:2vw 10vw 2vw 2vw;
-        font-size:1.5vw;
-        width:90vw;
-        display:flex;
-        align-items: center;
-        margin:1vw 0;
+@media (max-width: 480px) {
+    .location-heading {
+        font-size: 1.3rem;
+    }
+
+    .location-map span {
+        font-size: 0.9rem;
+    }
+
+    iframe {
+        height: 150px;
     }
 }

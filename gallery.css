@@ -1,119 +1,153 @@
-/* .gallery{
-    margin:auto;
-} */
-
-/* section{
-    background:rgb(213, 210, 210) !important;
-    background-attachment: fixed; 
-    mix-blend-mode: lighten;
-    margin:6vw auto !important;
-} */
-
-.secbox{
-    background:transparent !important;
-    margin:5vw auto !important;
+/* ✅ General Section Box Styling */
+.secbox {
+    background: transparent !important;
+    margin: 5vw auto !important;
+    text-align: center;
 }
 
-.secbox-heading{
+/* ✅ Section Heading Styling */
+.secbox-heading {
     background: transparent !important;
-    color:black !important;
+    color: black !important;
     text-decoration: underline;
     text-decoration-color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.images{
-    width:42rem;
-    /* height:30rem; */
-    border:0.2vw solid white;
-    position:relative;
+/* ✅ Image Container */
+.images {
+    width: 80%;
+    max-width: 42rem;
+    border: 2px solid white;
+    position: relative;
     overflow: hidden;
-    margin:auto;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.images-slider{
-    display:flex;
-    transform:translateX(0);
-    transition:all 0.5s ease 0s;
-}
-
-.image img{
-    display:none;
-    width: 100%;
-    /* height:30vw; */
-    /* object-fit: cover; */
-    object-fit:scale-down;
-}
-
-@media (max-width:600px) {
-    .images{
-        width:98%;
-        border:0.2vw solid white;
-        position:relative;
-        overflow: hidden;
-        margin:auto;
-    }
-    .image img{
-        display:none;
-        width: 100%;
-        object-fit:scale-down;
-    }
-}
-
-.photos,.videos{
-    padding:5vw;
-    margin:2vw auto;
-}
-
-.active img{
-    display:block;
-}
-
-.prev,.next{
-    color:black;
-    background-color:rgba(255, 255, 255, 0.76);
-    display:inline-block;
-    padding:0vw 1vw;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    cursor:pointer;
-    user-select: none;
-}
-
-
-.prev{
-    position:absolute;
-    top:50%;
-    left:0;
-}
-.next{
-    position:absolute;
-    top:50%;
-    right:0;
-}
-
-.zoom p{
-    font-size: 1.5vw;
-    color:white;
-    position:absolute;
-    bottom:0%;
-    left:36%;
-}
-
-
-.videos iframe{
-    width:20rem;
-    height:20rem;
-
-}
-@media (max-width:600px) {
-    .videos iframe{
-        width:10rem;
-        height:10rem;
-    }
-}
-
-.clips{
+/* ✅ Image Slider */
+.images-slider {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* ✅ Individual Image */
+.image img {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* 🟢 Active Image Styling */
+.active img {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ✅ Previous & Next Buttons */
+.prev,
+.next {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.2vw 1.8vw;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.prev>p,.next>p{
+    padding:0;
+    margin:0;
+}
+
+/* 🟢 Hover Effect */
+.prev:hover,
+.next:hover {
+    background-color: red;
+    color: white;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+}
+
+/* ✅ Positioning for Navigation */
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+/* ✅ Zoom Text */
+.zoom p {
+    font-size: 1.2rem;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+/* ✅ Video Container */
+.videos iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+    .secbox-heading {
+        font-size: 1.5rem;
+    }
+
+    .images {
+        width: 95%;
+        border: 1.5px solid white;
+    }
+
+    .prev,
+    .next {
+        font-size: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.8vw 1vw;
+    }
+
+    .zoom p {
+        font-size: 1rem;
+    }
+
+    .videos iframe {
+        height: 200px;
+    }
+}
+
+
+/* ✅ Image Zoom Styling */
+.images img {
+    cursor: zoom-in;
 }
