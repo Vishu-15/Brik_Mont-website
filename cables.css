@@ -73,12 +73,23 @@
     margin:1vw 2vw;
     padding:1vw;
     background-color: white;
+    max-width: 500px;
 }
 .category-diagram img{
     width:20rem;
     height:15rem;
     object-fit: scale-down;
 }
+
+/* Fix carousel size */
+#abcCarousel {
+  max-width: 300px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
 .description p{
     width:50%;
     color:black;
