@@ -1,0 +1,89 @@
+/* ✅ Ensure body scrolls properly */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  /* background-color: #eaf4fb;  */
+}
+
+/* ✅ Section heading */
+h2.section-title {
+  color: #004080;  /* Dark Blue */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* ✅ Responsive table container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 30px auto;
+  padding: 15px;
+  background: white;  /* White card effect */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Table styling */
+table.conductor-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.conductor-table th,
+.conductor-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.conductor-table th {
+  background-color:#005ab3b0; /* 🔵 Blue gradient */
+  color: white;
+  font-weight: bold;
+}
+
+.conductor-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.conductor-table tr:hover {
+  background-color: #ffe5e5; /* subtle red hover */
+  transition: 0.3s ease;
+}
+
+/* ✅ Highlight table title row */
+.conductor-table thead tr:first-child th {
+  background: #0059b3; /* 🔴 Red for main heading row */
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* ✅ Mobile-friendly font size */
+@media (max-width: 768px) {
+  .conductor-table th,
+  .conductor-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Ensure all carousel images have the same height and stay centered */
+#conductorCarousel .carousel-item img {
+  height: 400px;              /* adjust as per your design */
+  object-fit: contain;        /* show full image without cutting */
+  object-position: center;    /* keep centered */
+  background: #fff;           /* white background behind images */
+  padding: 10px;              /* optional: space around image */
+}
+
