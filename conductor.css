@@ -10,6 +10,10 @@ body {
   /* background-color: #eaf4fb;  */
 }
 
+.conductor-specs,.conductor-features{
+    margin-top: 8rem;
+}
+
 /* ✅ Section heading */
 h2.section-title {
   color: #004080;  /* Dark Blue */
