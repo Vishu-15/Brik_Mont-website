@@ -3,6 +3,7 @@ body {
     background-color: #CADCFC;
     margin: 0;
     padding: 0;
+    padding-top: 80px; /* Account for fixed navbar height */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -13,6 +14,12 @@ body {
     border-bottom: 2px solid black !important;
     transition: all ease 0.5s;
     padding: 0.8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; /* Ensures navbar stays above other content */
+    width: 100%;
 }
 
 .nav-onscroll-bg {
@@ -111,7 +118,7 @@ body {
         width:58vw;
         margin:auto;
         transition:top 0.5s;
-    
+
         display:flex;
         flex-direction: column;
         justify-content: center;

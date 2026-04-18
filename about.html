@@ -14,51 +14,8 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./images/nav-logo-img.png" alt="Brick Mont Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="./about.html" role="button" data-bs-toggle="dropdown">Who We Are</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./about.html#about1">Overview</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about2">Founder's Message</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about3">Visionary Leaders</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about4">Vision & Mission</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about5">Clients</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about6">Why Choose Us</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Products</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./cables.html">Cables</a></li>
-                        <li><a class="dropdown-item" href="./cables.html">Ariel Bunched Cables</a></li>
-                        <li><a class="dropdown-item" href="./conductor.html">Conductor</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    News & Media
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./gallery.html">Gallery</a></li>
-                    <li><a class="dropdown-item" href="./certificates.html">Certificates</a></li>
-                    <li><a class="dropdown-item" href="#">News</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link active" href="./contactUs.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+  <!-- Navbar - Loaded dynamically from components/navbar.html -->
+  <div id="navbar"></div>
 
       <section>
         <div class="jumbotron jumbotron-fluid ">
@@ -233,7 +190,9 @@
         </div>
     </footer>
 </body>
+<!-- Navbar & Footer - Loaded dynamically from components -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="./include.js"></script>
 <script src="./script.js"></script>
 <script>
   let vw=window.innerWidth;

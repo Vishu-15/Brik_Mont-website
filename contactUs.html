@@ -14,51 +14,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./images/nav-logo-img.png" alt="Brick Mont Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="./about.html" role="button" data-bs-toggle="dropdown">Who We Are</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./about.html#about1">Overview</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about2">Founder's Message</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about3">Visionary Leaders</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about4">Vision & Mission</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about5">Clients</a></li>
-                        <li><a class="dropdown-item" href="./about.html#about6">Why Choose Us</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Products</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./cables.html">Cables</a></li>
-                        <li><a class="dropdown-item" href="./cables.html">Ariel Bunched Cables</a></li>
-                        <li><a class="dropdown-item" href="./conductor.html">Conductor</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    News & Media
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./gallery.html">Gallery</a></li>
-                    <li><a class="dropdown-item" href="./certificates.html">Certificates</a></li>
-                    <li><a class="dropdown-item" href="#">News</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link active" href="./contactUs.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+  <!-- Navbar - Loaded dynamically from components/navbar.html -->
+  <div id="navbar"></div>
+
       <div class="jumbo jumbotron-fluid ">
           <img src="./images/contact_bg.jpg" class="img-fluid" alt="...">
           <div class="jumbo-logo">
@@ -88,39 +46,10 @@
         </div>
         </section>
 
-        <footer>
-          <div class="company-details">
-              <div class="footer-box">
-                  <img src="./images/logo2.png" alt="Company Logo" class="foot-logo">
-                  <div class="handles">
-                      <a href="https://www.facebook.com/BRIKMONT2014" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                      <i class="fa-brands fa-square-instagram"></i>
-                      <i class="fa-brands fa-youtube"></i>
-                      <i class="fa-brands fa-square-whatsapp"></i>
-                      <i class="fa-brands fa-square-x-twitter"></i>
-                      <i class="fa-brands fa-linkedin"></i>
-                  </div>
-              </div>
-              <div class="footer-box">
-                  <h3>Useful Links</h3>
-                  <a href="./index.html">Home</a>
-                  <a href="./about.html">Who We Are</a>
-                  <a href="./cables.html">Products</a>
-                  <a href="./gallery.html">News & Media</a>
-                  <a href="./contactUs.html">Contact Us</a>
-              </div>
-              <div class="footer-box">
-                  <h3>Contact Us</h3>
-                  <p><i class="fa-solid fa-location-dot"></i> reg office S.S INDUSTRIES 58, Netaji Subhas Road, Liluah, Howrah - 711204</p>
-                  <p><i class="fa-solid fa-location-dot"></i> corporate office S.S. INDUSTRIES   36A HARIN BARI LANE KOLKATA-700073</p>
-                  <!-- <p><i class="fa-solid fa-phone"></i> 9830166909 (Rabindra Singh)</p>
-                  <p><i class="fa-solid fa-phone"></i> 9830135305 (Samir Kr. Dey)</p> -->
-                  <p><i class="fa-solid fa-phone"></i> 8617289260 (Neha Singh)</p>
-                  <p><i class="fa-solid fa-envelope"></i> ssindustries2014@gmail.com</p>
-              </div>
-          </div>
-      </footer>
+        <div id="footer"></div>
 </body>
+<!-- Navbar & Footer - Loaded dynamically from components -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="./include.js"></script>
 <script src="./script.js"></script>
 </html>
