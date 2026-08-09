@@ -77,23 +77,23 @@
 
         <!-- PDF Preview Modal -->
         <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down">
-            <div class="modal-content">
-              <div class="modal-header">
+          <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down certificate-modal-dialog">
+            <div class="modal-content certificate-modal-content">
+              <div class="modal-header certificate-modal-header">
                 <h5 class="modal-title" id="pdfPreviewModalLabel">Certificate Preview</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body p-0">
-                <div class="ratio ratio-16x9" style="min-height: 65vh;">
-                  <iframe id="pdfPreviewFrame" src="" frameborder="0" allowfullscreen></iframe>
+              <div class="modal-body certificate-modal-body">
+                <div class="certificate-pdf-container">
+                  <iframe id="pdfPreviewFrame" class="certificate-pdf-frame" src="" title="Certificate PDF Preview" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
-              <div class="modal-footer">
+              <!-- <div class="modal-footer">
                 <a id="pdfPreviewOpenBtn" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open in new tab</a>
                 <a id="pdfDownloadBtn" class="btn btn-primary" download>Download</a>
                 <button type="button" class="btn btn-outline-primary" id="pdfPrintBtn">Print</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -102,16 +102,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="./include.js"></script>
 <script src="./script.js"></script>
+<script src="./js/pdfjs/pdf.min.js"></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
         const modalElement = document.getElementById('pdfPreviewModal');
         const pdfModal = new bootstrap.Modal(modalElement);
         const iframe = document.getElementById('pdfPreviewFrame');
         const previewTitle = document.getElementById('pdfPreviewModalLabel');
-        const openBtn = document.getElementById('pdfPreviewOpenBtn');
-        const downloadBtn = document.getElementById('pdfDownloadBtn');
-        const printBtn = document.getElementById('pdfPrintBtn');
         const container = document.querySelector('.files');
+
+        if (!window.pdfjsLib) {
+          console.error(
+            'PDF.js could not be loaded. Check that ./js/pdfjs/pdf.min.js exists.'
+          );
+        }
 
         fetch('certificates.json')
           .then(res => res.json())
@@ -128,9 +133,27 @@
               fileCard.dataset.name = cert.name.replace(/<br\s*\/?>/gi, ' ');
 
               fileCard.innerHTML = `
-                <img src="./images/pdf-icon.webp" alt="PDF icon">
-                <p class="midsize">${cert.name}</p>
+                <div class="certificate-preview" aria-hidden="true">
+                  <div class="certificate-preview-loading">
+                    <i class="fa-regular fa-file-pdf"></i>
+                    <span>Loading preview…</span>
+                  </div>
+                  <canvas class="certificate-preview-canvas"></canvas>
+                </div>
+                <div class="certificate-card-info">
+                  <p class="midsize">${cert.name}</p>
+                  <span class="certificate-view-label">
+                    View Certificate <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </div>
               `;
+
+              container.appendChild(fileCard);
+              renderCertificateThumbnail(
+                cert.file,
+                fileCard.querySelector('.certificate-preview'),
+                fileCard.querySelector('.certificate-preview-canvas')
+              );
 
               fileCard.addEventListener('click', () => openPreview(cert.file, cert.name));
               fileCard.addEventListener('keydown', event => {
@@ -139,8 +162,6 @@
                   openPreview(cert.file, cert.name);
                 }
               });
-
-              container.appendChild(fileCard);
             });
           })
           .catch(error => {
@@ -148,20 +169,70 @@
             console.error('Error loading certificates:', error);
           });
 
+        async function renderCertificateThumbnail(fileUrl, previewContainer, canvas) {
+          const loading = previewContainer.querySelector('.certificate-preview-loading');
+
+          try {
+            if (!window.pdfjsLib) {
+              throw new Error('PDF.js failed to load.');
+            }
+
+            pdfjsLib.GlobalWorkerOptions.workerSrc = './js/pdfjs/pdf.worker.js';
+
+            const pdf = await pdfjsLib.getDocument(fileUrl).promise;
+            const page = await pdf.getPage(1);
+
+            const containerWidth = Math.max(previewContainer.clientWidth - 28, 160);
+            const containerHeight = Math.max(previewContainer.clientHeight - 28, 180);
+            const baseViewport = page.getViewport({ scale: 1 });
+
+            const widthScale = containerWidth / baseViewport.width;
+            const heightScale = containerHeight / baseViewport.height;
+
+            // Fit the full first page inside the preview while keeping its aspect ratio.
+            const scale = Math.min(widthScale, heightScale, 1.5);
+            const viewport = page.getViewport({ scale });
+
+            const outputScale = window.devicePixelRatio || 1;
+
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+            canvas.style.width = `${viewport.width}px`;
+            canvas.style.height = `${viewport.height}px`;
+
+            const context = canvas.getContext('2d', { alpha: false });
+
+            await page.render({
+              canvasContext: context,
+              viewport,
+              transform: outputScale !== 1
+                ? [outputScale, 0, 0, outputScale, 0, 0]
+                : null
+            }).promise;
+
+            canvas.classList.add('is-rendered');
+            loading.remove();
+          } catch (error) {
+            console.warn(`Could not render PDF thumbnail: ${fileUrl}`, error);
+            loading.innerHTML = `
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PDF Certificate</span>
+            `;
+            previewContainer.classList.add('preview-fallback');
+          }
+        }
+
         function openPreview(fileUrl, fileName) {
           previewTitle.textContent = fileName.replace(/<br\s*\/?>/gi, ' ');
           iframe.src = fileUrl;
-          openBtn.href = fileUrl;
-          downloadBtn.href = fileUrl;
-          downloadBtn.setAttribute('download', `${fileName.replace(/<br\s*\/?>/gi, ' ').trim()}.pdf`);
+          // openBtn.href = fileUrl;
+          // downloadBtn.href = fileUrl;
+          // downloadBtn.setAttribute('download', `${fileName.replace(/<br\s*\/?>/gi, ' ').trim()}.pdf`);
           pdfModal.show();
         }
 
-        printBtn.addEventListener('click', () => {
-          if (iframe.contentWindow) {
-            iframe.contentWindow.focus();
-            iframe.contentWindow.print();
-          }
+        modalElement.addEventListener('hidden.bs.modal', () => {
+          iframe.src = '';
         });
   });
 </script>

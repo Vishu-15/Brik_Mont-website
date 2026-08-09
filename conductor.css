@@ -33,6 +33,7 @@ h2.section-title {
   background: white;  /* White card effect */
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
 }
 
 /* ✅ Table styling */
