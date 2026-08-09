@@ -67,35 +67,102 @@
             </div>
           </div>
         </section>
-        
+    
         <div class="certified-by">
           <span class="midsize">Certified By</span>
           <img src="./images/isi_bis-logo.png" alt="">
         </div>
-        
+    
         <div id="footer"></div>
+
+        <!-- PDF Preview Modal -->
+        <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="pdfPreviewModalLabel">Certificate Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-0">
+                <div class="ratio ratio-16x9" style="min-height: 65vh;">
+                  <iframe id="pdfPreviewFrame" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a id="pdfPreviewOpenBtn" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                <a id="pdfDownloadBtn" class="btn btn-primary" download>Download</a>
+                <button type="button" class="btn btn-outline-primary" id="pdfPrintBtn">Print</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 </body>
 <!-- Navbar & Footer - Loaded dynamically from components -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="./include.js"></script>
 <script src="./script.js"></script>
 <script>
-  fetch('certificates.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector('.files');
-    container.innerHTML = '';
+  document.addEventListener('DOMContentLoaded', () => {
+        const modalElement = document.getElementById('pdfPreviewModal');
+        const pdfModal = new bootstrap.Modal(modalElement);
+        const iframe = document.getElementById('pdfPreviewFrame');
+        const previewTitle = document.getElementById('pdfPreviewModalLabel');
+        const openBtn = document.getElementById('pdfPreviewOpenBtn');
+        const downloadBtn = document.getElementById('pdfDownloadBtn');
+        const printBtn = document.getElementById('pdfPrintBtn');
+        const container = document.querySelector('.files');
 
-    data.forEach(cert => {
-      container.innerHTML += `
-        <div class="file">
-          <a href="${cert.file}" target="_blank">
-            <img src="./images/pdf-icon.webp">
-            <p class="midsize">${cert.name}</p>
-          </a>
-        </div>
-      `;
-    });
+        fetch('certificates.json')
+          .then(res => res.json())
+          .then(data => {
+            container.innerHTML = '';
+
+            data.forEach(cert => {
+              const fileCard = document.createElement('div');
+              fileCard.className = 'file';
+              fileCard.tabIndex = 0;
+              fileCard.setAttribute('role', 'button');
+              fileCard.setAttribute('aria-label', `Preview ${cert.name}`);
+              fileCard.dataset.file = cert.file;
+              fileCard.dataset.name = cert.name.replace(/<br\s*\/?>/gi, ' ');
+
+              fileCard.innerHTML = `
+                <img src="./images/pdf-icon.webp" alt="PDF icon">
+                <p class="midsize">${cert.name}</p>
+              `;
+
+              fileCard.addEventListener('click', () => openPreview(cert.file, cert.name));
+              fileCard.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  openPreview(cert.file, cert.name);
+                }
+              });
+
+              container.appendChild(fileCard);
+            });
+          })
+          .catch(error => {
+            container.innerHTML = '<p class="text-danger">Unable to load certificates. Please try again later.</p>';
+            console.error('Error loading certificates:', error);
+          });
+
+        function openPreview(fileUrl, fileName) {
+          previewTitle.textContent = fileName.replace(/<br\s*\/?>/gi, ' ');
+          iframe.src = fileUrl;
+          openBtn.href = fileUrl;
+          downloadBtn.href = fileUrl;
+          downloadBtn.setAttribute('download', `${fileName.replace(/<br\s*\/?>/gi, ' ').trim()}.pdf`);
+          pdfModal.show();
+        }
+
+        printBtn.addEventListener('click', () => {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+          }
+        });
   });
 </script>
 

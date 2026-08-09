@@ -41,6 +41,7 @@ section {
   text-align: center;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 /* 🟢 Hover Effect - Lift the Card */
@@ -56,13 +57,13 @@ section {
 }
 
 /* ✅ PDF Icon */
-.file a img {
+.file img {
   width: 4rem;
   transition: transform 0.3s ease-in-out;
 }
 
 /* 🟢 Hover Effect - Zoom Icon */
-.file:hover a img {
+.file:hover img {
   transform: scale(1.1);
 }
 
