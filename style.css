@@ -347,7 +347,7 @@ body {
 }
 
 .logos-slide-left {
-    animation: clients-slide-left 30s linear infinite;
+    animation: clients-slide-left 60s linear infinite;
 }
 
 .logos-slide-right {
